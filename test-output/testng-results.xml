@@ -2,38 +2,34 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-10-12T09:41:38Z" name="Default suite" finished-at="2020-10-12T09:42:34Z" duration-ms="55789">
+  <suite started-at="2020-10-13T12:43:05Z" name="Default suite" finished-at="2020-10-13T12:57:43Z" duration-ms="877838">
     <groups>
     </groups>
-    <test started-at="2020-10-12T09:41:38Z" name="Default test" finished-at="2020-10-12T09:42:34Z" duration-ms="55789">
+    <test started-at="2020-10-13T12:43:05Z" name="Default test" finished-at="2020-10-13T12:57:43Z" duration-ms="877838">
       <class name="com.project.SmartTicket_GoogleSheet.LoginPage_Automation">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.project.SmartTicket_GoogleSheet.LoginPage_Automation@5c669da8]" started-at="2020-10-12T09:41:38Z" name="setup" finished-at="2020-10-12T09:41:44Z" duration-ms="6216" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.project.SmartTicket_GoogleSheet.LoginPage_Automation@5c669da8]" started-at="2020-10-13T12:43:05Z" name="setup" finished-at="2020-10-13T12:43:10Z" duration-ms="5751" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="login()[pri:0, instance:com.project.SmartTicket_GoogleSheet.LoginPage_Automation@5c669da8]" started-at="2020-10-12T09:41:44Z" name="login" finished-at="2020-10-12T09:42:33Z" duration-ms="49155" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="login()[pri:0, instance:com.project.SmartTicket_GoogleSheet.LoginPage_Automation@5c669da8]" started-at="2020-10-13T12:43:10Z" name="login" finished-at="2020-10-13T12:57:42Z" duration-ms="871472" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="top"]/nav/div/div/ul/li[3]/a"}
+              <![CDATA[element click intercepted: Element <button _ngcontent-lcd-c199="" type="submit" class="btn btn-primary">...</button> is not clickable at point (1436, 695). Other element would receive the click: <a _ngcontent-lcd-c56="" href="http://smartdata.net">...</a>
   (Session info: chrome=86.0.4240.75)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-E1H3COG', ip: '192.168.43.76', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+System info: host: 'DESKTOP-E1H3COG', ip: '192.168.100.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Vinod\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:51270}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 863bf78bc5cf4c4845d6812c695a3b4b
-*** Element info: {Using=xpath, value=//*[@id="top"]/nav/div/div/ul/li[3]/a}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Vinod\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59256}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 5622932e7f1d21dc347e20c6a8fcacb9]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="top"]/nav/div/div/ul/li[3]/a"}
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button _ngcontent-lcd-c199="" type="submit" class="btn btn-primary">...</button> is not clickable at point (1436, 695). Other element would receive the click: <a _ngcontent-lcd-c56="" href="http://smartdata.net">...</a>
   (Session info: chrome=86.0.4240.75)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESKTOP-E1H3COG', ip: '192.168.43.76', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+System info: host: 'DESKTOP-E1H3COG', ip: '192.168.100.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Vinod\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:51270}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 863bf78bc5cf4c4845d6812c695a3b4b
-*** Element info: {Using=xpath, value=//*[@id="top"]/nav/div/div/ul/li[3]/a}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.75, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Vinod\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59256}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 5622932e7f1d21dc347e20c6a8fcacb9
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -45,11 +41,9 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-at com.project.SmartTicket_GoogleSheet.LoginPage_Automation.login(LoginPage_Automation.java:75)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+at com.project.SmartTicket_GoogleSheet.LoginPage_Automation.login(LoginPage_Automation.java:734)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -77,11 +71,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.project.SmartTicket_GoogleSheet.LoginPage_Automation@5c669da8]" started-at="2020-10-12T09:42:33Z" name="getResult" finished-at="2020-10-12T09:42:33Z" duration-ms="12" status="PASS">
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.project.SmartTicket_GoogleSheet.LoginPage_Automation@5c669da8]" started-at="2020-10-13T12:57:42Z" name="getResult" finished-at="2020-10-13T12:57:42Z" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -92,11 +86,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.project.SmartTicket_GoogleSheet.LoginPage_Automation@5c669da8]" started-at="2020-10-12T09:42:33Z" name="tearDown" finished-at="2020-10-12T09:42:33Z" duration-ms="103" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.project.SmartTicket_GoogleSheet.LoginPage_Automation@5c669da8]" started-at="2020-10-13T12:57:42Z" name="tearDown" finished-at="2020-10-13T12:57:42Z" duration-ms="364" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="testend()[pri:0, instance:com.project.SmartTicket_GoogleSheet.LoginPage_Automation@5c669da8]" started-at="2020-10-12T09:42:33Z" name="testend" finished-at="2020-10-12T09:42:34Z" duration-ms="258" status="PASS">
+        <test-method is-config="true" signature="testend()[pri:0, instance:com.project.SmartTicket_GoogleSheet.LoginPage_Automation@5c669da8]" started-at="2020-10-13T12:57:42Z" name="testend" finished-at="2020-10-13T12:57:43Z" duration-ms="220" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testend -->
