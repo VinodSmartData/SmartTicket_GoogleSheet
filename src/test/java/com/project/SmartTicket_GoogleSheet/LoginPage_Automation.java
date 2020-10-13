@@ -32,12 +32,10 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
 import com.sun.tools.sjavac.Log;
 
 
-public class LoginPage_Automation 
-{
+public class LoginPage_Automation {
 	WebDriver driver;
 	String Variable;
 	ArrayList tabs;
@@ -59,39 +57,32 @@ public class LoginPage_Automation
 	}
 	
 	@Test(priority=0)
-	public void login() throws GeneralSecurityException, IOException, InterruptedException 
-	{
+	public void login() throws GeneralSecurityException, IOException, InterruptedException {
 		logger = extent.createTest("SmartTicket login", "Test of login page in smart ticket site");
 		List<List<Object>> values =TestGoogleSheet.GetData();
-		  if (values == null || values.isEmpty()) 
-		  {
+		  if (values == null || values.isEmpty()) {
 				System.out.println("No data found.");
-		 } 
-		  else 
-		  {
+			} else {
 				for (List row : values) {
 					
 						driver.get("http://smartticket-qa.smartdata.live/landing-page");
-						
-
 						Thread.sleep(3000);
-						driver.findElement(By.xpath("//*[@id=\"top\"]/nav/div/div/ul/li[3]/a")).click();
+						driver.findElement(By.xpath(".//*[@class='btn dropdown-toggle ng-tns-c43-0']")).click();
 						WebElement emailid = driver.findElement(By.name("email"));
 						emailid.sendKeys(row.get(0).toString());
 						Thread.sleep(1000);
 						driver.findElement(By.name("password")).sendKeys(row.get(1).toString());;
 						Thread.sleep(1000);
-						driver.findElement(By.xpath("//*[@id=\"top\"]/nav/div/div/ul/li[3]/div/form/div/div[2]/button")).click();
+						driver.findElement(By.xpath(".//*[@class='btn btn-primary pull-right ng-tns-c43-0']")).click();
 						Thread.sleep(5000);
 						String ChoseName = row.get(2).toString();
-					
-						if (driver.findElements(By.xpath(".//*[@class='text-center ng-star-inserted' and  text()='"+ChoseName+"']")).size() > 0 && driver.findElement(By.xpath(".//*[@class='text-center ng-star-inserted' and  text()='"+ChoseName+"']")).isDisplayed() == true) 
+						
+						if (driver.findElements(By.xpath(".//*[@class='text-center ng-star-inserted' and  text()='"+ChoseName+"']")).size() > 0 && driver.findElement(By.xpath(".//*[@class='text-center ng-star-inserted' and  text()='"+ChoseName+"']")).isDisplayed() == true)
 						{
 							System.out.println(ChoseName);
 							WebElement chooseworkspace = driver.findElement(By.xpath(".//*[@class='text-center ng-star-inserted' and  text()='"+ChoseName+"']"));
 							JavascriptExecutor jse1 = (JavascriptExecutor) driver;
 							jse1.executeScript("arguments[0].click();", chooseworkspace);
-
 						Thread.sleep(5000);
 						}
 						WebElement user_profile = driver.findElement(By.xpath(".//*[@class='user-image']"));
@@ -157,14 +148,13 @@ public class LoginPage_Automation
 						smart_ticket.click();
 						Thread.sleep(3000);
 						String WorkDropDown = row2.get(1).toString();
-					
 						System.out.println(WorkDropDown);
-						WebElement smart_data_test1 = driver.findElement(By.xpath("//*[@class='dropdown-item name-header' and text()='"+WorkDropDown+"']"));
-						smart_data_test1.click();
+						WebElement workspace = driver.findElement(By.xpath("//*[@class='dropdown-item name-header' and text()='"+WorkDropDown+"']"));
+						workspace.click();
 						Thread.sleep(5000);
 								}
 							}
-						WebElement setting = driver.findElement(By.xpath("//*[@class='fa fa-gear']"));
+						WebElement setting = driver.findElement(By.xpath(".//*[@class='fa fa-gear']"));
 						JavascriptExecutor js4 = (JavascriptExecutor) driver;
 						js4.executeScript("arguments[0].click();", setting);
 						Thread.sleep(5000);
@@ -191,12 +181,6 @@ public class LoginPage_Automation
 						WebElement start_import = driver.findElement(By.xpath("//*[@id=\"import-tickets\"]/section/div/div/div/div[2]/form/button"));
 						JavascriptExecutor js6 = (JavascriptExecutor) driver;
 						js6.executeScript("arguments[0].click();", start_import);
-						WebElement dashboard = driver.findElement(By.xpath(".//*[@class='nav-icon fa fa-home']"));
-						dashboard.click();
-						Thread.sleep(5000);
-						WebElement john = driver.findElement(By.linkText("My Johns"));
-						JavascriptExecutor js10 = (JavascriptExecutor) driver;
-						js10.executeScript("arguments[0].click();", john);
 						Thread.sleep(5000);
 								}
 							}
@@ -205,10 +189,6 @@ public class LoginPage_Automation
 								System.out.println("No data found.");
 							} else {
 								for (List row4 : values4) {
-						WebElement setting1 = driver.findElement(By.xpath("/html/body/app-root/app-dashboard/div/div/app-header/div/nav/ul[2]/li[3]/a"));
-						JavascriptExecutor js7 = (JavascriptExecutor) driver;
-						js7.executeScript("arguments[0].click();", setting1);
-						Thread.sleep(3000);
 						WebElement import_user = driver.findElement(By.linkText("Import Users"));
 						JavascriptExecutor js8 = (JavascriptExecutor) driver;
 						js8.executeScript("arguments[0].click();", import_user);
@@ -270,19 +250,14 @@ public class LoginPage_Automation
 										Thread.sleep(5000);
 						
 										WebElement filter = driver.findElement(By.xpath(".//*[@class='form-control ng-untouched ng-pristine ng-valid']"));
-										//*[@id=\"mat-tab-content-3-0\"]/div/app-current-users/div/div/div[1]/div[1]/input
-										//*[@id=\"mat-tab-content-1-0\"]/div/app-current-users/div/div/div[1]/div[1]/input
 										filter.sendKeys(row5.get(0).toString());
 										Thread.sleep(5000);
 										WebElement remove = driver.findElement(By.xpath(".//*[@class='btn btn-danger']"));
-										//*[@id="mat-tab-content-3-0"]/div/app-current-users/div/ag-grid-angular/div/div[1]/div[2]/div[3]/div[2]/div/div/div/div[6]
-										//*[@id="mat-tab-content-1-0"]/div/app-current-users/div/ag-grid-angular/div/div[1]/div[2]/div[3]/div[2]/div/div/div/div[6]/button
 										JavascriptExecutor jse4 = (JavascriptExecutor) driver;
 										jse4.executeScript("arguments[0].click();", remove);
 										Thread.sleep(5000);
 										WebElement yes = driver.findElement(By.xpath(".//*[@class='btn btn-primary']"));
-										//*[@id=\"mat-dialog-0\"]/app-confirm-dialog/div/div[3]/button[1]
-									    JavascriptExecutor jse5 = (JavascriptExecutor)driver;
+										JavascriptExecutor jse5 = (JavascriptExecutor)driver;
 									    jse5.executeScript("arguments[0].click();", yes);
 									    Thread.sleep(5000);
 									    driver.findElement(By.xpath(".//*[@class='mat-ripple mat-tab-label mat-focus-indicator ng-star-inserted']")).click();
@@ -306,7 +281,6 @@ public class LoginPage_Automation
 									    filters.sendKeys(row5.get(2).toString());
 									    Thread.sleep(5000);
 									    WebElement resend = driver.findElement(By.xpath(".//*[@class='btn btn-default']"));
-									  //*[@id="mat-tab-content-0-1"]/div/app-pending-users/div/ag-grid-angular/div/div[1]/div[2]/div[3]/div[2]/div/div/div/div[5]/button
 									    JavascriptExecutor jse8 = (JavascriptExecutor)driver;
 									    jse8.executeScript("arguments[0].click();", resend);
 									    Thread.sleep(5000);
@@ -315,7 +289,6 @@ public class LoginPage_Automation
 									    jse9.executeScript("arguments[0].click();", remove_pending);
 									    Thread.sleep(5000);
 									    WebElement yes1 = driver.findElement(By.xpath(".//*[@class='btn btn-primary']"));
-									    //yes1.click();
 									    JavascriptExecutor jse10 = (JavascriptExecutor)driver;
 									    jse10.executeScript("arguments[0].click();", yes1);
 									    Thread.sleep(5000);
@@ -478,13 +451,15 @@ public class LoginPage_Automation
 												Thread.sleep(5000);
 											}
 									}
-									  driver.findElement(By.linkText("Test Form")).click();
-									  Thread.sleep(4000);
+									 
 									  List<List<Object>> values9 =TestGoogleSheet.Get_ManageWorkflow();
 									  if (values9 == null || values.isEmpty()) {
 											System.out.println("No data found.");
 										} else {
 											for (List row9 : values9) {
+												String Formname = row9.get(3).toString();
+												 driver.findElement(By.linkText(Formname)).click();
+												  Thread.sleep(4000);
 									  driver.findElement(By.linkText("Manage Workflow")).click();
 									  Thread.sleep(4000);
 									  driver.navigate().refresh();
@@ -672,9 +647,9 @@ public class LoginPage_Automation
 									    Select dropdown = new Select(owner);
 									    dropdown.selectByVisibleText(row12.get(3).toString());
 									    Thread.sleep(4000);
-									    WebElement testform = driver.findElement(By.xpath("/html/body/app-root/app-admin-settings-dashboard/div/div/div/section/div/app-admin-api/div/section/form/div/div/div/div[2]/div[2]/div[5]/table/tbody/tr[1]/td[2]/mat-slide-toggle/label/div"));
+									    WebElement formname = driver.findElement(By.xpath("/html/body/app-root/app-admin-settings-dashboard/div/div/div/section/div/app-admin-api/div/section/form/div/div/div/div[2]/div[2]/div[5]/table/tbody/tr[8]/td[2]/mat-slide-toggle/label/div"));
 									    JavascriptExecutor js3 = (JavascriptExecutor)driver;
-										js3.executeScript("arguments[0].click();", testform);
+										js3.executeScript("arguments[0].click();", formname);
 										Thread.sleep(4000);
 										WebElement update = driver.findElement(By.xpath("/html/body/app-root/app-admin-settings-dashboard/div/div/div/section/div/app-admin-api/div/section/form/div/div/button"));
 										JavascriptExecutor js4 = (JavascriptExecutor)driver;
@@ -703,9 +678,9 @@ public class LoginPage_Automation
 										driver.findElement(By.xpath(".//*[@class='fa fa-gear']")).click();
 										Thread.sleep(4000);
 										driver.findElement(By.linkText("Api Connectivity")).click();
-										WebElement testform1 = driver.findElement(By.xpath("/html/body/app-root/app-admin-settings-dashboard/div/div/div/section/div/app-admin-api/div/section/form/div/div/div/div[2]/div[2]/div[5]/table/tbody/tr[1]/td[2]/mat-slide-toggle/label/div"));
+										WebElement formname1 = driver.findElement(By.xpath("/html/body/app-root/app-admin-settings-dashboard/div/div/div/section/div/app-admin-api/div/section/form/div/div/div/div[2]/div[2]/div[5]/table/tbody/tr[8]/td[2]/mat-slide-toggle/label/div"));
 									    JavascriptExecutor js6 = (JavascriptExecutor)driver;
-										js6.executeScript("arguments[0].click();", testform1);
+										js6.executeScript("arguments[0].click();", formname1);
 										Thread.sleep(4000);
 										WebElement enable_api_access1 = driver.findElement(By.xpath(".//*[@class='mat-slide-toggle-bar mat-slide-toggle-bar-no-side-margin']"));
 										JavascriptExecutor js10 = (JavascriptExecutor)driver;
@@ -723,7 +698,7 @@ public class LoginPage_Automation
 								}
 						}
 						
-						driver.findElement(By.xpath(".//*[@class='nav nav-pills nav-sidebar flex-column nav-legacy text-sm sidebar-menu']/li[3]")).click();
+						driver.findElement(By.xpath(".//*[@class='nav nav-pills nav-sidebar flex-column nav-legacy text-sm sidebar-menu']/li[9]")).click();
 						Thread.sleep(4000);
 						 List<List<Object>> values13 =TestGoogleSheet.Get_Ticket();
 						  if (values13 == null || values.isEmpty()) {
@@ -873,8 +848,8 @@ public class LoginPage_Automation
 						    driver.findElement(By.xpath(".//*[@class='btn btn-default pull-right mr10 ng-star-inserted']")).click();
 							Thread.sleep(5000);
 						  }
-						  WebElement user = driver.findElement(By.xpath(".//*[@class='nav-item dropdown user user-menu']"));
-						  JavascriptExecutor js = (JavascriptExecutor)driver;
+						  WebElement user = driver.findElement(By.xpath(".//*[@class='user-image']"));
+							JavascriptExecutor js = (JavascriptExecutor) driver;
 							js.executeScript("arguments[0].click();", user);
 						  Thread.sleep(5000);
 						  driver.findElement(By.linkText("Sign Out")).click();
